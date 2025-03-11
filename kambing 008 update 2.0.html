@@ -1,0 +1,106 @@
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maklumat Kambing: 008</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            background: #e8f5e9;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        Maklumat Ternakan Kambing: 008
+    </header>
+    <main>
+        <section>
+            <h2>No Tag: <span id="tag">008</span></h2>
+        </section>
+        <section>
+            <h2>Berat: <span id="weight">21 KG</span></h2>
+        </section>
+        <section>
+            <h2>Jantina: <span id="gender">Betina</span></h2>
+        </section>
+        <section>
+            <h2>Baka: <span id="breed">Katjang</span></h2>
+        </section>
+        <section>
+            <h2>Kesihatan: <span id="health">Sihat</span></h2>
+        </section>
+        <button id="editButton">Edit Maklumat</button>
+        <form id="editForm" class="hidden">
+            
+            <label>Berat:</label>
+            <input type="text" id="editWeight" value="21 KG">
+            <label>Kesihatan:</label>
+            <input type="text" id="editHealth" value="Sihat">
+            
+            <button type="button" onclick="saveData()">Simpan</button>
+        </form>
+    </main>
+    <footer>
+        2025 Unit Ruminan KVLD - Semua Maklumat Dilindungi @iqmmal_f
+    </footer>
+    
+    <script>
+        document.getElementById("editButton").addEventListener("click", function() {
+            let password = prompt("Masukkan kata laluan untuk mengedit:");
+            if (password === "Gar123") {
+                document.getElementById("editForm").classList.remove("hidden");
+            } else {
+                alert("Kata laluan salah!");
+            }
+        });
+
+        function saveData() {
+           
+            document.getElementById("weight").innerText = document.getElementById("editWeight").value;
+            document.getElementById("health").innerText = document.getElementById("editHealth").value;
+            document.getElementById("editForm").classList.add("hidden");
+            alert("Maklumat berjaya dikemas kini!");
+        }
+    </script>
+</body>
+</html>
